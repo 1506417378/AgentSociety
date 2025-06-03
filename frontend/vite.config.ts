@@ -5,12 +5,8 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
     server: {
         proxy: {
-            '/api/alipay': {
-                target: 'https://agentsociety.fiblab.net',
-                changeOrigin: true,
-            },
             '/api': {
-                target: 'http://localhost:80',
+                target: 'http://8.137.80.116:8080',
                 changeOrigin: true,
             }
         }

@@ -1,0 +1,17 @@
+addr: 127.0.0.1:8080
+read_only: false
+debug: true
+logging_level: INFO
+env:
+  mlflow:
+    enabled: true # Whether to enable MLflow
+    mlflow_uri: http://8.137.80.116:59000 # MLflow server URI``
+    username: admin # MLflow server username
+    password: CHANGE_ME # MLflow server password
+    pgsql:
+      enabled: true # Whether to enable PostgreSQL
+      dsn: postgresql://root:1223456@8.137.80.116:54320/postgres # PostgreSQL connection string
+    redis:
+      server: 8.137.80.116 # Redis server address
+      port: 6379 # Redis port
+      password: CHANGE_ME # Redis password

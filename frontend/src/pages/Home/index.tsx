@@ -1,62 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { Layout, Typography, Button, Space, Row, Col } from 'antd';
-import { GithubOutlined } from '@ant-design/icons';
+import { Typography, Button, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 
-const { Title, Text, Link } = Typography;
+const {Text, Link } = Typography;
 
-// 透明导航条样式
-const newsBarStyle = {
-    background: 'rgba(255, 255, 255, 0.2)',
-    border: '1px solid rgba(255, 255, 255, 0.1)',
-    padding: '8px 12px',
-    borderRadius: '32px',
-    backdropFilter: 'blur(4px)',
-    maxWidth: '500px',
-};
 
 const HomePage = () => {
-    const [stars, setStars] = useState(0);
     const { t } = useTranslation();
-
-    useEffect(() => {
-        fetch('https://api.github.com/repos/tsinghua-fib-lab/agentsociety')
-            .then(res => res.json())
-            .then(data => setStars(data.stargazers_count))
-            .catch(() => setStars(0));
-    }, []);
 
     return (
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <Link href="https://agentsociety.readthedocs.io/en/latest/02-version-1.3/01.v1.3.0.html">
-                <div style={newsBarStyle}>
-                    <Space>
-                        <Col
-                            style={{
-                                backgroundColor: '#F28F0D',
-                                color: 'white',
-                                borderRadius: '16px',
-                                padding: '4px 12px',
-                                marginRight: '8px',
-                            }}
-                        >{t('home.whatsNew')}</Col>
-                        <Col style={{
-                            color: 'white'
-                        }}>
-                            {t('home.releaseNotes')}
-                        </Col>
-                    </Space>
-                </div>
-            </Link>
             <Text
                 italic={true}
                 style={{
                     color: 'white',
                     fontSize: '4rem',
                     fontWeight: 500,
+                    fontFamily: '"Microsoft YaHei", "微软雅黑", sans-serif',
                 }}
             >
-                AgentSociety
+                AgentSociety-抖音流量分析平台
             </Text>
 
             <div
@@ -92,23 +54,23 @@ const HomePage = () => {
                     </Button>
                 </Link>
 
-                <Link href="https://github.com/tsinghua-fib-lab/agentsociety" target="_blank">
-                    <Button
-                        icon={<GithubOutlined />}
-                        size="large"
-                        style={{
-                            height: '56px',
-                            padding: '0 32px',
-                            fontSize: '16px',
-                            borderRadius: '32px',
-                            background: 'rgba(255, 255, 255, 0.1)',
-                            borderColor: 'transparent',
-                            color: 'white'
-                        }}
-                    >
-                        {stars > 0 ? `${stars.toLocaleString()} ${t('home.stars')}` : 'GitHub'}
-                    </Button>
-                </Link>
+                {/*<Link href="https://github.com/tsinghua-fib-lab/agentsociety" target="_blank">*/}
+                {/*    <Button*/}
+                {/*        icon={<GithubOutlined />}*/}
+                {/*        size="large"*/}
+                {/*        style={{*/}
+                {/*            height: '56px',*/}
+                {/*            padding: '0 32px',*/}
+                {/*            fontSize: '16px',*/}
+                {/*            borderRadius: '32px',*/}
+                {/*            background: 'rgba(255, 255, 255, 0.1)',*/}
+                {/*            borderColor: 'transparent',*/}
+                {/*            color: 'white'*/}
+                {/*        }}*/}
+                {/*    >*/}
+                {/*        {stars > 0 ? `${stars.toLocaleString()} ${t('home.stars')}` : 'GitHub'}*/}
+                {/*    </Button>*/}
+                {/*</Link>*/}
             </Space>
         </div >
     );
