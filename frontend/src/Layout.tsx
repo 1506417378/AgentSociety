@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useRef } from "react";
 
 export default function RootLayout({
-    children,
-    selectedKey,
-    homePage,
-}: {
+                                       children,
+                                       selectedKey,
+                                       homePage,
+                                   }: {
     children: React.ReactNode
     selectedKey: string
     homePage?: boolean
@@ -16,12 +16,21 @@ export default function RootLayout({
     const headerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
 
-    const headerStyle = {
+    // 根据页面类型设置导航栏样式
+    const headerStyle = homePage ? {
+        background: '#FFFFFF',
+        color: '#000000',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+    } : {
         background: '#000088',
         color: 'white',
     }
 
-    const menuStyle = {
+    // 根据页面类型设置菜单样式
+    const menuStyle = homePage ? {
+        background: '#FFFFFF',
+        color: '#000000',
+    } : {
         background: '#000088',
         color: 'white',
     }
@@ -43,7 +52,6 @@ export default function RootLayout({
 
     const contentStyle: React.CSSProperties = homePage ? {
         width: "100vw",
-        background: '#000088',
         top: 0,
         left: 0,
         alignContent: "center",
@@ -56,11 +64,21 @@ export default function RootLayout({
             <Header ref={headerRef} style={headerStyle}>
                 <Flex gap='small' align='center' style={{ width: '100%' }}>
                     <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
-                        <img src="/logo.png" alt="AgentSociety" style={{ height: '24px', display: 'block' }} />
+                        {/* 首页使用深色logo */}
+                        <img
+                            src={homePage ? "/logo_dark.png" : "/logo.png"}
+                            alt="AgentSociety"
+                            style={{ height: '24px', display: 'block' }}
+                        />
                     </Link>
                     <Divider type="vertical" />
                     <div style={{ flex: 1 }}>
-                        <RootMenu selectedKey={homePage ? "" : selectedKey} style={menuStyle} />
+                        {/* 传递homePage属性给菜单组件 */}
+                        <RootMenu
+                            selectedKey={homePage ? "" : selectedKey}
+                            style={menuStyle}
+                            homePage={homePage}
+                        />
                     </div>
                 </Flex>
             </Header>

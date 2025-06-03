@@ -1,3 +1,31 @@
+/* 添加浅色导航栏样式 */
+.ant-layout-header.light-header {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 浅色导航栏下的菜单样式 */
+.ant-menu-light.light-menu {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+}
+
+/* 浅色导航栏下的菜单项样式 */
+.ant-menu-light.light-menu .ant-menu-item {
+    color: rgba(0, 0, 0, 0.85) !important;
+}
+
+.ant-menu-light.light-menu .ant-menu-item:hover {
+    color: #0000CC !important;
+}
+
+.ant-menu-light.light-menu .ant-menu-item-selected {
+    color: #0000CC !important;
+    border-bottom: 2px solid #0000CC !important;
+}
+
+
 :root {
     font-weight: normal;
 

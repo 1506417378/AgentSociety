@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 
-const RootMenu = ({ selectedKey, style }: {
+const RootMenu = ({ selectedKey, style, homePage }: {
     selectedKey: string,
-    style?: React.CSSProperties
+    style?: React.CSSProperties,
+    homePage?: boolean  // 添加homePage属性
 }) => {
     const { t, i18n } = useTranslation();
     const [mlflowUrl, setMlflowUrl] = useState<string>("");
@@ -92,7 +93,7 @@ const RootMenu = ({ selectedKey, style }: {
     return (
         <div style={{ display: 'flex', width: '100%' }}>
             <Menu
-                theme="dark"
+                theme={homePage ? "light" : "dark"} // 根据页面切换主题
                 mode="horizontal"
                 items={menuItems}
                 selectedKeys={[selectedKey]}
@@ -105,9 +106,15 @@ const RootMenu = ({ selectedKey, style }: {
                 minWidth: '320px',
                 justifyContent: 'flex-end'
             }}>
+                {/* 添加数据分析按钮 */}
+                <Link to="/analysis" style={{ marginRight: 16 }}>
+                    <Button type="text" style={{ color: homePage ? '#000000' : 'white' }}>
+                        数据分析
+                    </Button>
+                </Link>
                 <Button
                     type="text"
-                    style={{ color: 'white' }}
+                    style={{ color: homePage ? '#000000' : 'white' }} // 根据页面切换按钮颜色
                     onClick={handleLanguageChange}
                 >
                     {i18n.language === 'en' ? '中文' : 'English'}

@@ -1,0 +1,20 @@
+/* 添加卡片悬停效果 */
+.home-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.home-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15) !important;
+}
+
+/* 添加淡入效果 */
+.fade-in-active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* 确保背景图固定 */
+body {
+    background-attachment: fixed;
+}

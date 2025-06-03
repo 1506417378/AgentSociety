@@ -15,6 +15,7 @@ import CreateExperiment from './pages/Experiment/CreateExperiment'
 import ProfileList from './pages/Agent/ProfileList'
 import AgentTemplate from './pages/Agent/AgentTemplateList'
 import Home from './pages/Home'
+import Analysis from './pages/Analysis/index';
 import zhCN from 'antd/locale/zh_CN'
 import enUS from 'antd/locale/en_US'
 import './i18n'
@@ -96,6 +97,12 @@ const router = createBrowserRouter([
         path: "/agent-templates/edit/:id",
         element: (
             <RootLayout selectedKey='/agent-templates'><AgentTemplateForm /></RootLayout>
+        ),
+    },
+    {
+        path: "/analysis",
+        element: (
+            <RootLayout selectedKey='/analysis'><Analysis /></RootLayout>
         ),
     },
     {
