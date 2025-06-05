@@ -39,6 +39,7 @@ i18n
                         demo: 'Demo',
                         demoUser: 'Demo User',
                         profiles: 'Profiles',
+                        analysis:'Analysis'
                     },
                     home: {
                         whatsNew: "What's New",
@@ -497,6 +498,7 @@ i18n
                         demo: '示例',
                         demoUser: '示例用户',
                         profiles: '智能体画像',
+                        analysis:'数据分析'
                     },
                     home: {
                         whatsNew: "最新动态",

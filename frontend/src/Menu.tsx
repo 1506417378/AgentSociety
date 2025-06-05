@@ -87,6 +87,7 @@ const RootMenu = ({ selectedKey, style, homePage }: {
     }
     menuItems.push({ key: "/Documentation", label: <Link to="https://agentsociety.readthedocs.io/en/latest/" rel="noopener noreferrer" target="_blank"><Space>{t('menu.documentation')}</Space></Link> });
     menuItems.push({ key: "/Github", label: <Link to="https://github.com/1506417378/AgentSociety" rel="noopener noreferrer" target="_blank"><Space>{t('menu.github')}<GithubOutlined /></Space></Link> });
+    menuItems.push({key:"/Analysis",label:<Link to="https://lame-stiff-meat.anvil.app/" rel="noopener noreferrer" target="_blank"><Space>{t('menu.analysis')}</Space></Link> });
 
     const menuStyle: React.CSSProperties = {
         ...style,
@@ -112,7 +113,7 @@ const RootMenu = ({ selectedKey, style, homePage }: {
                 justifyContent: 'flex-end'
             }}>
                 {/* 添加数据分析按钮 */}
-                <Link to="/analysis" style={{ marginRight: 16 }}>
+                <Link to="https://lame-stiff-meat.anvil.app/" rel="noopener noreferrer" target="_blank" style={{ marginRight: 16 }}>
                     <Button type="text" style={{ color: homePage ? '#000000' : 'white' }}>
                         数据分析
                     </Button>
