@@ -21,6 +21,8 @@ import enUS from 'antd/locale/en_US'
 import './i18n'
 import { useTranslation } from 'react-i18next'
 import AgentTemplateForm from './pages/Agent/AgentTemplateForm'
+import Workbench from './pages/Workbench/index.tsx'
+import DataVisualizationDashboard from "./pages/Workbench/DataVisualizationDashboard.tsx";
 
 const router = createBrowserRouter([
     {
@@ -49,6 +51,12 @@ const router = createBrowserRouter([
         path: "/create-experiment",
         element: (
             <RootLayout selectedKey='/create-experiment'><CreateExperiment /></RootLayout>
+        ),
+    },
+    {
+        path: "/Workbench",
+        element: (
+            <RootLayout selectedKey='/workbench'><Workbench /></RootLayout>
         ),
     },
     {
@@ -103,6 +111,12 @@ const router = createBrowserRouter([
         path: "/analysis",
         element: (
             <RootLayout selectedKey='/analysis'><Analysis /></RootLayout>
+        ),
+    },
+    {
+        path: '/DataVisualizationDashboard', // 添加 DataVisualizationDashboard 路由
+        element: (
+            <RootLayout selectedKey='/DataVisualizationDashboard'><DataVisualizationDashboard /></RootLayout>
         ),
     },
     {

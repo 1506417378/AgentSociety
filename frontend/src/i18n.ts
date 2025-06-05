@@ -20,6 +20,7 @@ i18n
             en: {
                 translation: {
                     menu: {
+                        workbench:'Workbench',
                         experiments: 'Experiments',
                         survey: 'Survey',
                         documentation: 'Documentation',
@@ -477,6 +478,7 @@ i18n
             zh: {
                 translation: {
                     menu: {
+                        workbench:'工作台',
                         experiments: '实验',
                         survey: '问卷',
                         documentation: '文档',

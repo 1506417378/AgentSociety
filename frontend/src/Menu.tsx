@@ -1,4 +1,4 @@
-import { ExportOutlined, GithubOutlined, PlusOutlined, ExperimentOutlined, ApiOutlined, TeamOutlined, GlobalOutlined, NodeIndexOutlined, SettingOutlined } from "@ant-design/icons";
+import { ExportOutlined, GithubOutlined,  ExperimentOutlined, ApiOutlined, TeamOutlined, GlobalOutlined, NodeIndexOutlined, SettingOutlined } from "@ant-design/icons";
 import { Menu, MenuProps, Space, Dropdown, Button } from "antd";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -25,9 +25,9 @@ const RootMenu = ({ selectedKey, style, homePage }: {
         i18n.changeLanguage(newLang);
     };
 
-    // Experiment submenu items
-    const experimentItems: MenuProps['items'] = [
-    ];
+    // // Experiment submenu items
+    // const experimentItems: MenuProps['items'] = [
+    // ];
 
     const agentItems: MenuProps['items'] = [
         {
@@ -43,6 +43,11 @@ const RootMenu = ({ selectedKey, style, homePage }: {
     ];
 
     const menuItems: MenuProps['items'] = [
+        {
+            key: '/Workbench',
+            label: <Link to="/workbench">{t('menu.workbench')}</Link>,
+            icon: <SettingOutlined />,
+        },
         {
             key: '/llms',
             label: <Link to="/llms">{t('menu.llmConfigs')}</Link>,
@@ -81,7 +86,7 @@ const RootMenu = ({ selectedKey, style, homePage }: {
         menuItems.push({ key: "/mlflow", label: <Link to={mlflowUrl} rel="noopener noreferrer" target="_blank"><Space>{t('menu.mlflow')}<ExportOutlined /></Space></Link> });
     }
     menuItems.push({ key: "/Documentation", label: <Link to="https://agentsociety.readthedocs.io/en/latest/" rel="noopener noreferrer" target="_blank"><Space>{t('menu.documentation')}</Space></Link> });
-    menuItems.push({ key: "/Github", label: <Link to="https://github.com/tsinghua-fib-lab/agentsociety/" rel="noopener noreferrer" target="_blank"><Space>{t('menu.github')}<GithubOutlined /></Space></Link> });
+    menuItems.push({ key: "/Github", label: <Link to="https://github.com/1506417378/AgentSociety" rel="noopener noreferrer" target="_blank"><Space>{t('menu.github')}<GithubOutlined /></Space></Link> });
 
     const menuStyle: React.CSSProperties = {
         ...style,
